@@ -5,8 +5,8 @@ const express = require('express')
 const weather = require('./utility/weather.js')
 
 const app = express()
-
-// Define paths for Express config
+const port = process.env.PORT || 3000
+    // Define paths for Express config
 const public_dir_path = path.join(__dirname, '../public')
 const view_dir_path = path.join(__dirname, '../templates/views')
 const partial_dir_path = path.join(__dirname, '../templates/partials')
@@ -45,6 +45,6 @@ app.get('/weather', (req, res) => {
     })
 })
 
-app.listen(8001, () => {
-    console.log('Server is up on port 8001.')
+app.listen(port, () => {
+    console.log('Server is up on port ', port)
 })
