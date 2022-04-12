@@ -2,7 +2,7 @@ const request = require('request')
 
 const get_weather = (city, callback) => {
     const weather_key = '075c50d3ffaba4d626185d22fe8b821e'
-    const url = 'http://api.weatherstack.com/current?access_key=' + weather_key + '&query=' + city + '&units=f'
+    const url = 'http://api.weatherstack.com/current?access_key=' + weather_key + '&query=' + city + '&units=m'
 
     request({ url, json: true }, (error, { body }) => {
         if (error) {
